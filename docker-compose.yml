@@ -31,7 +31,7 @@ services:
     environment:
       AWS_ACCESS_KEY_ID: "fakekey"
       AWS_SECRET_ACCESS_KEY: "fakeaccesskey"
-      AWS_REGION: us-east-2
+      AWS_REGION: us-east-1
     command: ["-D\"java.library.path\"=./DynamoDBLocal_lib", "-jar", "DynamoDBLocal.jar", "-inMemory", "-sharedDb"]
 
 volumes:
