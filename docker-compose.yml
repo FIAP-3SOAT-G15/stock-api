@@ -23,7 +23,7 @@ services:
     image: postgres:15.4
     container_name: stock_db
     volumes:
-      - db:/var/lib/postgresql/data
+      - stock_db:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=selforder
       - POSTGRES_USER=selforder
