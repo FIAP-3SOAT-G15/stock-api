@@ -10,3 +10,6 @@ spring:
 
 admin:
   access-token: ${ADMIN_ACCESS_TOKEN}
+
+server:
+  port: 8081
