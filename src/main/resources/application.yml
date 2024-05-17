@@ -38,3 +38,6 @@ mercadopago:
   integration:
     posId: ${MP_POS_ID}
     webhookBaseUrl: ${MP_WEBHOOK_BASE_URL}
+
+server:
+  port: 8081

@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.fiap</groupId>
-    <artifactId>stock-api</artifactId>
+    <artifactId>stock-</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>stock-api</name>
+    <name>stock</name>
     <description>API</description>
     <properties>
         <java.version>17</java.version>
