@@ -1,5 +1,5 @@
 locals {
-  name     = "stock-db"
+  name     = "stockdb"
   username = "master"
   port     = 5432
 }
