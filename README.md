@@ -200,3 +200,4 @@ ngrok http http://localhost:8080
 ```
 
 Acesse o endereço de redirecionamento ("forwarding").
+
