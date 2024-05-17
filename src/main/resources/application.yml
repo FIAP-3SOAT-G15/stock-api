@@ -1,6 +1,6 @@
 spring:
   application:
-    name: payments
+    name: stock
   security:
     oauth2:
       resourceserver:
@@ -10,24 +10,3 @@ spring:
 
 admin:
   access-token: ${ADMIN_ACCESS_TOKEN}
-
-payment-provider:
-  mock: ${MOCK_PAYMENT_PROVIDER}
-
-mercadopago:
-  api:
-    url: https://api.mercadopago.com
-    token: ${MP_TOKEN}
-    userId: ${MP_USER_ID}
-  integration:
-    posId: ${MP_POS_ID}
-    webhookBaseUrl: ${MP_WEBHOOK_BASE_URL}
-
-amazon:
-  dynamodb:
-    endpoint: http://localhost:54000
-  aws:
-    accessKey: fakekey
-    secretKey: fakeaccesskey
-    region: us-east-2
-
