@@ -1,24 +1,19 @@
-output "vpc_id" {
-  description = "The ID of the VPC"
-  value       = module.vpc.vpc_id
+output "db_instance_master_user_secret_arn" {
+  description = "The ARN of the master user secret (Only available when manage_master_user_password is set to true)"
+  value       = module.db.db_instance_master_user_secret_arn
 }
 
-output "vpc_cidr_block" {
-  description = "The CIDR block of the VPC"
-  value       = module.vpc.vpc_cidr_block
+output "rds_ssm_parameter_name" {
+  description = "The name of the SSM parameter for RDS parameters"
+  value       = module.rds_params.ssm_parameter_name
 }
 
-output "private_subnets" {
-  description = "List of IDs of private subnets"
-  value       = module.vpc.private_subnets
+output "rds_secrets_read_only_policy_arn" {
+  description = "The ARN of the RDS secrets"
+  value       = aws_iam_policy.rds_secrets_read_only_policy.arn
 }
 
-output "database_subnet_group_name" {
-  description = "Name of database subnet group"
-  value       = module.vpc.database_subnet_group_name
-}
-
-output "mercado_pago_secrets_read_only_policy_arn" {
-  description = "The ARN of the Mercado Pago secrets"
-  value       = aws_iam_policy.mercado_pago_secrets_read_only_policy.arn
+output "rds_params_read_only_policy_arn" {
+  description = "The ARN of the RDS params"
+  value       = aws_iam_policy.rds_params_read_only_policy.arn
 }

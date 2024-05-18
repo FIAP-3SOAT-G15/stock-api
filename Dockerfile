@@ -1,4 +1,4 @@
-FROM maven:3.9.5-amazoncorretto-17 as maven
+FROM maven:3.9.6-eclipse-temurin-17 as maven
 
 WORKDIR /usr/src/app
 
@@ -8,7 +8,7 @@ RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:17-jdk
 
-ARG JAR_FILE=stockapi.jar
+ARG JAR_FILE=stock.jar
 
 WORKDIR /opt/app
 
