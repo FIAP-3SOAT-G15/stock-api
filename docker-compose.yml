@@ -10,13 +10,13 @@ services:
     depends_on:
       - stock_db
     environment:
-      - DB_ENDPOINT=stock_db:5432
-      - DB_NAME=selforder
-      - DB_USERNAME=selforder
-      - DB_PASSWORD=self@Order123!
-      - ADMIN_ACCESS_TOKEN=token
+      DB_ENDPOINT: stock_db:5432
+      DB_NAME: selforder
+      DB_USERNAME: selforder
+      DB_PASSWORD: self@Order123!
+      ADMIN_ACCESS_TOKEN: token
     ports:
-      - "8080:8080"
+      - "8081:8081"
     restart: always
 
   stock_db:
@@ -25,9 +25,9 @@ services:
     volumes:
       - stock_db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=stock
-      - POSTGRES_USER=selforder
-      - POSTGRES_PASSWORD=self@Order123!
+      POSTGRES_DB: stock
+      POSTGRES_USER: selforder
+      POSTGRES_PASSWORD: self@Order123!
     ports:
       - "5432:5432"
     restart: always
