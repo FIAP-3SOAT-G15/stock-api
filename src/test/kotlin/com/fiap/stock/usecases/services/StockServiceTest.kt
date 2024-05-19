@@ -1,4 +1,4 @@
-package com.fiap.stock.application.services
+package com.fiap.stock.usecases.services
 
 import com.fiap.stock.adapter.gateway.StockGateway
 import com.fiap.stock.domain.errors.ErrorType
