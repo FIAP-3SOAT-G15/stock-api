@@ -1,4 +1,4 @@
-package com.fiap.stock.adapter.controller
+package com.fiap.stock.application.adapter.controller
 
 import com.fiap.stock.domain.entities.Stock
 import com.fiap.stock.driver.web.StockAPI

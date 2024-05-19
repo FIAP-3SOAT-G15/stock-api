@@ -1,9 +1,9 @@
-package com.fiap.stock.adapter.controller.configuration
+package com.fiap.stock.application.adapter.controller.configuration
 
 import com.fiap.stock.StockApiApp
-import com.fiap.stock.adapter.gateway.ComponentGateway
-import com.fiap.stock.adapter.gateway.ProductGateway
-import com.fiap.stock.adapter.gateway.StockGateway
+import com.fiap.stock.application.adapter.gateway.ComponentGateway
+import com.fiap.stock.application.adapter.gateway.ProductGateway
+import com.fiap.stock.application.adapter.gateway.StockGateway
 import com.fiap.stock.usecases.LoadComponentUseCase
 import com.fiap.stock.application.services.ComponentService
 import org.springframework.context.annotation.Bean

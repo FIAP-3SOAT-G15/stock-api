@@ -1,6 +1,6 @@
 package com.fiap.stock.application.services
 
-import com.fiap.stock.adapter.gateway.ProductGateway
+import com.fiap.stock.application.adapter.gateway.ProductGateway
 import com.fiap.stock.domain.errors.ErrorType
 import com.fiap.stock.domain.errors.SelfOrderManagementException
 import createProduct

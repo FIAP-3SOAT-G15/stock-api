@@ -1,6 +1,6 @@
-package com.fiap.stock.adapter.gateway.impl
+package com.fiap.stock.application.adapter.gateway.impl
 
-import com.fiap.stock.adapter.gateway.TransactionalGateway
+import com.fiap.stock.application.adapter.gateway.TransactionalGateway
 import org.springframework.transaction.annotation.Transactional
 
 open class TransactionalGatewayImpl : TransactionalGateway {

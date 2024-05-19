@@ -1,4 +1,4 @@
-package com.fiap.stock.adapter.gateway
+package com.fiap.stock.application.adapter.gateway
 
 import com.fiap.stock.domain.entities.Stock
 

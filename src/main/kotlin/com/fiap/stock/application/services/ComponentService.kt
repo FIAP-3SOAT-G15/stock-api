@@ -1,8 +1,8 @@
 package com.fiap.stock.application.services
 
-import com.fiap.stock.adapter.gateway.ComponentGateway
-import com.fiap.stock.adapter.gateway.ProductGateway
-import com.fiap.stock.adapter.gateway.StockGateway
+import com.fiap.stock.application.adapter.gateway.ComponentGateway
+import com.fiap.stock.application.adapter.gateway.ProductGateway
+import com.fiap.stock.application.adapter.gateway.StockGateway
 import com.fiap.stock.domain.entities.Component
 import com.fiap.stock.domain.entities.Stock
 import com.fiap.stock.domain.errors.ErrorType

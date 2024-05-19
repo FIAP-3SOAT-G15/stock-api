@@ -1,14 +1,14 @@
 package com.fiap.stock.driver.database.configuration
 
 import com.fiap.stock.StockApiApp
-import com.fiap.stock.adapter.gateway.ComponentGateway
-import com.fiap.stock.adapter.gateway.ProductGateway
-import com.fiap.stock.adapter.gateway.StockGateway
-import com.fiap.stock.adapter.gateway.TransactionalGateway
-import com.fiap.stock.adapter.gateway.impl.ComponentGatewayImpl
-import com.fiap.stock.adapter.gateway.impl.ProductGatewayImpl
-import com.fiap.stock.adapter.gateway.impl.StockGatewayImpl
-import com.fiap.stock.adapter.gateway.impl.TransactionalGatewayImpl
+import com.fiap.stock.application.adapter.gateway.ComponentGateway
+import com.fiap.stock.application.adapter.gateway.ProductGateway
+import com.fiap.stock.application.adapter.gateway.StockGateway
+import com.fiap.stock.application.adapter.gateway.TransactionalGateway
+import com.fiap.stock.application.adapter.gateway.impl.ComponentGatewayImpl
+import com.fiap.stock.application.adapter.gateway.impl.ProductGatewayImpl
+import com.fiap.stock.application.adapter.gateway.impl.StockGatewayImpl
+import com.fiap.stock.application.adapter.gateway.impl.TransactionalGatewayImpl
 import com.fiap.stock.driver.database.persistence.jpa.ComponentJpaRepository
 import com.fiap.stock.driver.database.persistence.jpa.ProductJpaRepository
 import com.fiap.stock.driver.database.persistence.jpa.StockJpaRepository

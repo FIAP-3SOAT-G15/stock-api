@@ -1,6 +1,6 @@
 package services
 
-import com.fiap.stock.adapter.gateway.StockGateway
+import com.fiap.stock.application.adapter.gateway.StockGateway
 import com.fiap.stock.domain.entities.Stock
 import com.fiap.stock.domain.errors.ErrorType
 import com.fiap.stock.domain.errors.SelfOrderManagementException
