@@ -1,9 +1,9 @@
 package com.fiap.stock.application.adapter.controller
 
-import com.fiap.stock.domain.entities.Stock
-import com.fiap.stock.driver.web.StockAPI
-import com.fiap.stock.driver.web.request.QuantityRequest
-import com.fiap.stock.usecases.AdjustStockUseCase
+import com.fiap.stock.application.domain.entities.Stock
+import com.fiap.stock.application.driver.web.StockAPI
+import com.fiap.stock.application.driver.web.request.QuantityRequest
+import com.fiap.stock.application.usecases.AdjustStockUseCase
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RestController
 

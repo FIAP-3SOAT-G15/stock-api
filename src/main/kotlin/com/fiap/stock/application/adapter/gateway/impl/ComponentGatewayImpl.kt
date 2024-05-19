@@ -1,11 +1,11 @@
 package com.fiap.stock.application.adapter.gateway.impl
 
 import com.fiap.stock.application.adapter.gateway.ComponentGateway
-import com.fiap.stock.domain.entities.Component
-import com.fiap.stock.domain.errors.ErrorType
-import com.fiap.stock.domain.errors.SelfOrderManagementException
-import com.fiap.stock.driver.database.persistence.jpa.ComponentJpaRepository
-import com.fiap.stock.driver.database.persistence.mapper.ComponentMapper
+import com.fiap.stock.application.domain.entities.Component
+import com.fiap.stock.application.domain.errors.ErrorType
+import com.fiap.stock.application.domain.errors.SelfOrderManagementException
+import com.fiap.stock.application.driver.database.persistence.jpa.ComponentJpaRepository
+import com.fiap.stock.application.driver.database.persistence.mapper.ComponentMapper
 import org.mapstruct.factory.Mappers
 
 class ComponentGatewayImpl(

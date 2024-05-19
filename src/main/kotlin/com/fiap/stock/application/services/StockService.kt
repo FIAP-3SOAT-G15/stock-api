@@ -1,11 +1,11 @@
-package services
+package com.fiap.stock.application.services
 
 import com.fiap.stock.application.adapter.gateway.StockGateway
-import com.fiap.stock.domain.entities.Stock
-import com.fiap.stock.domain.errors.ErrorType
-import com.fiap.stock.domain.errors.SelfOrderManagementException
-import com.fiap.stock.usecases.AdjustStockUseCase
-import com.fiap.stock.usecases.LoadStockUseCase
+import com.fiap.stock.application.domain.entities.Stock
+import com.fiap.stock.application.domain.errors.ErrorType
+import com.fiap.stock.application.domain.errors.SelfOrderManagementException
+import com.fiap.stock.application.usecases.AdjustStockUseCase
+import com.fiap.stock.application.usecases.LoadStockUseCase
 import org.slf4j.LoggerFactory
 
 class StockService(

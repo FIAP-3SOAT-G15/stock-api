@@ -298,7 +298,7 @@
                 <executions>
                     <execution>
                         <configuration>
-                            <mainClass>com.fiap.stock.StockApiApp</mainClass>
+                            <mainClass>com.fiap.stock.application.StockApiApp</mainClass>
                         </configuration>
                     </execution>
                     <execution>

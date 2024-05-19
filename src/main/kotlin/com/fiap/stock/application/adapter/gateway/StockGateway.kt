@@ -1,6 +1,6 @@
 package com.fiap.stock.application.adapter.gateway
 
-import com.fiap.stock.domain.entities.Stock
+import com.fiap.stock.application.domain.entities.Stock
 
 interface StockGateway {
     fun findByComponentNumber(componentNumber: Long): Stock?

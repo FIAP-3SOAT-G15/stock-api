@@ -3,9 +3,8 @@ package com.fiap.stock.application.services
 import com.fiap.stock.application.adapter.gateway.ComponentGateway
 import com.fiap.stock.application.adapter.gateway.ProductGateway
 import com.fiap.stock.application.adapter.gateway.StockGateway
-import com.fiap.stock.domain.errors.ErrorType
-import com.fiap.stock.domain.errors.SelfOrderManagementException
-import com.fiap.stock.application.services.ComponentService
+import com.fiap.stock.application.domain.errors.ErrorType
+import com.fiap.stock.application.domain.errors.SelfOrderManagementException
 import createComponent
 import createProduct
 import io.mockk.every

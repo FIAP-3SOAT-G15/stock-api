@@ -1,7 +1,7 @@
-import com.fiap.stock.domain.entities.Component
-import com.fiap.stock.domain.entities.Product
-import com.fiap.stock.domain.entities.Stock
-import com.fiap.stock.domain.valueobjects.ProductCategory
+import com.fiap.stock.application.domain.entities.Component
+import com.fiap.stock.application.domain.entities.Product
+import com.fiap.stock.application.domain.entities.Stock
+import com.fiap.stock.application.domain.valueobjects.ProductCategory
 import java.math.BigDecimal
 
 fun createProduct(

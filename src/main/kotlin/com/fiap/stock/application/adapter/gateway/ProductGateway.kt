@@ -1,7 +1,7 @@
 package com.fiap.stock.application.adapter.gateway
 
-import com.fiap.stock.domain.entities.Product
-import com.fiap.stock.domain.valueobjects.ProductCategory
+import com.fiap.stock.application.domain.entities.Product
+import com.fiap.stock.application.domain.valueobjects.ProductCategory
 
 interface ProductGateway {
     fun findAll(): List<Product>

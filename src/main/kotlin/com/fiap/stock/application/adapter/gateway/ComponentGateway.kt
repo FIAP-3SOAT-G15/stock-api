@@ -1,6 +1,6 @@
 package com.fiap.stock.application.adapter.gateway
 
-import com.fiap.stock.domain.entities.Component
+import com.fiap.stock.application.domain.entities.Component
 
 interface ComponentGateway {
     fun findAll(): List<Component>

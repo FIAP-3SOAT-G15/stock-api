@@ -1,16 +1,16 @@
 package com.fiap.stock.application.adapter.controller.configuration
 
-import com.fiap.stock.StockApiApp
+import com.fiap.stock.application.StockApiApp
 import com.fiap.stock.application.adapter.gateway.ComponentGateway
 import com.fiap.stock.application.adapter.gateway.ProductGateway
 import com.fiap.stock.application.adapter.gateway.StockGateway
-import com.fiap.stock.usecases.LoadComponentUseCase
+import com.fiap.stock.application.usecases.LoadComponentUseCase
 import com.fiap.stock.application.services.ComponentService
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
-import services.ProductService
-import services.StockService
+import com.fiap.stock.application.services.ProductService
+import com.fiap.stock.application.services.StockService
 
 @Configuration
 @ComponentScan(basePackageClasses = [StockApiApp::class])

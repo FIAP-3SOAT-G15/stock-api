@@ -1,12 +1,12 @@
 package com.fiap.stock.application.adapter.gateway.impl
 
 import com.fiap.stock.application.adapter.gateway.ProductGateway
-import com.fiap.stock.domain.entities.Product
-import com.fiap.stock.domain.errors.ErrorType
-import com.fiap.stock.domain.errors.SelfOrderManagementException
-import com.fiap.stock.domain.valueobjects.ProductCategory
-import com.fiap.stock.driver.database.persistence.jpa.ProductJpaRepository
-import com.fiap.stock.driver.database.persistence.mapper.ProductMapper
+import com.fiap.stock.application.domain.entities.Product
+import com.fiap.stock.application.domain.errors.ErrorType
+import com.fiap.stock.application.domain.errors.SelfOrderManagementException
+import com.fiap.stock.application.domain.valueobjects.ProductCategory
+import com.fiap.stock.application.driver.database.persistence.jpa.ProductJpaRepository
+import com.fiap.stock.application.driver.database.persistence.mapper.ProductMapper
 import org.mapstruct.factory.Mappers
 
 class ProductGatewayImpl(

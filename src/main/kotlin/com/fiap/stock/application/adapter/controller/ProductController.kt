@@ -1,19 +1,22 @@
 package com.fiap.stock.application.adapter.controller
 
-import com.fiap.stock.domain.entities.Product
-import com.fiap.stock.domain.valueobjects.ProductCategory
-import com.fiap.stock.driver.web.ProductAPI
-import com.fiap.stock.driver.web.request.ProductComposeRequest
-import com.fiap.stock.driver.web.request.ProductRequest
-import com.fiap.stock.driver.web.response.ProductResponse
+import com.fiap.stock.application.domain.entities.Product
+import com.fiap.stock.application.domain.valueobjects.ProductCategory
+import com.fiap.stock.application.driver.web.ProductAPI
+import com.fiap.stock.application.driver.web.request.ProductComposeRequest
+import com.fiap.stock.application.driver.web.request.ProductRequest
+import com.fiap.stock.application.driver.web.response.ProductResponse
+import com.fiap.stock.application.usecases.AssembleProductsUseCase
+import com.fiap.stock.application.usecases.LoadProductUseCase
+import com.fiap.stock.application.usecases.SearchProductUseCase
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class ProductController(
-    private val assembleProductsUseCase: com.fiap.stock.usecases.AssembleProductsUseCase,
-    private val loadProductUseCase: com.fiap.stock.usecases.LoadProductUseCase,
-    private val searchProductUseCase: com.fiap.stock.usecases.SearchProductUseCase,
+    private val assembleProductsUseCase: AssembleProductsUseCase,
+    private val loadProductUseCase: LoadProductUseCase,
+    private val searchProductUseCase: SearchProductUseCase,
 ) : ProductAPI {
     override fun getByProductNumber(productNumber: Long): ResponseEntity<ProductResponse> {
         return loadProductUseCase.getByProductNumber(productNumber).let(::createResponse)

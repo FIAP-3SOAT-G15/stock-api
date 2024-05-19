@@ -1,11 +1,11 @@
-package services
+package com.fiap.stock.application.services
 
 import com.fiap.stock.application.adapter.gateway.ProductGateway
-import com.fiap.stock.domain.entities.Product
-import com.fiap.stock.domain.errors.ErrorType
-import com.fiap.stock.domain.errors.SelfOrderManagementException
-import com.fiap.stock.domain.valueobjects.ProductCategory
-import com.fiap.stock.usecases.*
+import com.fiap.stock.application.domain.entities.Product
+import com.fiap.stock.application.domain.errors.ErrorType
+import com.fiap.stock.application.domain.errors.SelfOrderManagementException
+import com.fiap.stock.application.domain.valueobjects.ProductCategory
+import com.fiap.stock.application.usecases.*
 import org.slf4j.LoggerFactory
 
 class ProductService(

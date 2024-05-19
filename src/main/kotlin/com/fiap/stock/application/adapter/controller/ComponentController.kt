@@ -1,11 +1,11 @@
 package com.fiap.stock.application.adapter.controller
 
-import com.fiap.stock.domain.entities.Component
-import com.fiap.stock.driver.web.ComponentAPI
-import com.fiap.stock.driver.web.request.ComponentRequest
-import com.fiap.stock.usecases.CreateComponentUseCase
-import com.fiap.stock.usecases.LoadComponentUseCase
-import com.fiap.stock.usecases.SearchComponentUseCase
+import com.fiap.stock.application.domain.entities.Component
+import com.fiap.stock.application.driver.web.ComponentAPI
+import com.fiap.stock.application.driver.web.request.ComponentRequest
+import com.fiap.stock.application.usecases.CreateComponentUseCase
+import com.fiap.stock.application.usecases.LoadComponentUseCase
+import com.fiap.stock.application.usecases.SearchComponentUseCase
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RestController
 
