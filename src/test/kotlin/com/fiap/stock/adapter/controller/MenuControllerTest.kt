@@ -1,4 +1,4 @@
-package com.fiap.stock.application.controller
+package com.fiap.stock.adapter.controller
 
 import com.fiap.stock.adapter.controller.MenuController
 import com.fiap.stock.domain.valueobjects.ProductCategory
