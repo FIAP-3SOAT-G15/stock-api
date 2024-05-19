@@ -43,7 +43,7 @@ class ProductGatewayImpl(
         val number =
             product.number ?: throw SelfOrderManagementException(
                 errorType = ErrorType.PRODUCT_NUMBER_IS_MANDATORY,
-                message = "Product ${product.name} not identified by number",
+                message = "Product [${product.name}] not identified by number",
             )
         val newItem =
             findByProductNumber(number)?.update(product)

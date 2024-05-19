@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 
-@Tag(name = "menu", description = "API de menu")
+@Tag(name = "menu", description = "Menu")
 @RequestMapping("/menu")
 interface MenuAPI {
     @Operation(summary = "Retorna todos os produtos")

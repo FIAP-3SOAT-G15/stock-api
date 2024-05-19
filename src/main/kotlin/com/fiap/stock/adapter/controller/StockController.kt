@@ -11,17 +11,11 @@ import org.springframework.web.bind.annotation.RestController
 class StockController(
     private val adjustStockUseCase: AdjustStockUseCase,
 ) : StockAPI {
-    override fun increment(
-        componentNumber: Long,
-        quantityRequest: QuantityRequest,
-    ): ResponseEntity<Stock> {
+    override fun increment(componentNumber: Long, quantityRequest: QuantityRequest): ResponseEntity<Stock> {
         return ResponseEntity.ok(adjustStockUseCase.increment(componentNumber, quantityRequest.quantity))
     }
 
-    override fun decrement(
-        componentNumber: Long,
-        quantityRequest: QuantityRequest,
-    ): ResponseEntity<Stock> {
+    override fun decrement(componentNumber: Long, quantityRequest: QuantityRequest): ResponseEntity<Stock> {
         return ResponseEntity.ok(adjustStockUseCase.decrement(componentNumber, quantityRequest.quantity))
     }
 }

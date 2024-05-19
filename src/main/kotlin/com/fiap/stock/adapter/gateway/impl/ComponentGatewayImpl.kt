@@ -41,7 +41,7 @@ class ComponentGatewayImpl(
                         ?.update(component)
                         ?: throw SelfOrderManagementException(
                             errorType = ErrorType.COMPONENT_NUMBER_IS_MANDATORY,
-                            message = "Component ${component.name} not identified by number",
+                            message = "Component [${component.name}] not identified by number",
                         )
                 }
                 ?: throw SelfOrderManagementException(
@@ -55,7 +55,7 @@ class ComponentGatewayImpl(
         val number =
             component.number ?: throw SelfOrderManagementException(
                 errorType = ErrorType.COMPONENT_NUMBER_IS_MANDATORY,
-                message = "Component ${component.name} not identified by number",
+                message = "Component [${component.name}] not identified by number",
             )
         val item =
             findByComponentNumber(number)

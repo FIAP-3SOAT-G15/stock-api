@@ -3,10 +3,6 @@ import com.fiap.stock.domain.entities.Product
 import com.fiap.stock.domain.entities.Stock
 import com.fiap.stock.domain.valueobjects.ProductCategory
 import java.math.BigDecimal
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.util.*
-
 
 fun createProduct(
     number: Long = 123,
@@ -45,6 +41,3 @@ fun createComponent(
     number = componentNumber,
     name = name,
 )
-
-
-

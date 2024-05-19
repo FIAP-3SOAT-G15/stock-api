@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 
-@Tag(name = "produto", description = "API de produtos")
+@Tag(name = "produto", description = "Produtos")
 @RequestMapping("/admin/products")
 interface ProductAPI {
     @Operation(
