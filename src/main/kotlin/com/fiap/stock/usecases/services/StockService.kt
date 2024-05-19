@@ -6,11 +6,14 @@ import com.fiap.stock.domain.errors.ErrorType
 import com.fiap.stock.domain.errors.SelfOrderManagementException
 import com.fiap.stock.usecases.AdjustStockUseCase
 import com.fiap.stock.usecases.LoadStockUseCase
+import org.slf4j.LoggerFactory
 
 class StockService(
     private val stockRepository: StockGateway,
 ) : LoadStockUseCase,
     AdjustStockUseCase {
+    private val log = LoggerFactory.getLogger(javaClass)
+    
     override fun getByComponentNumber(componentNumber: Long): Stock {
         return stockRepository.findByComponentNumber(componentNumber)
             ?: throw SelfOrderManagementException(
@@ -23,6 +26,7 @@ class StockService(
         componentNumber: Long,
         quantity: Long,
     ): Stock {
+        log.info("Incrementing component [$componentNumber] by +$quantity")
         val stock = getByComponentNumber(componentNumber)
         return stockRepository.update(stock.copy(quantity = stock.quantity + quantity))
     }
@@ -31,6 +35,7 @@ class StockService(
         componentNumber: Long,
         quantity: Long,
     ): Stock {
+        log.info("Decrementing component [$componentNumber] by -$quantity")
         val stock = getByComponentNumber(componentNumber)
         if (stock.hasSufficientInventory(quantity)) {
             throw SelfOrderManagementException(

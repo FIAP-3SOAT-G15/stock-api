@@ -6,6 +6,7 @@ import com.fiap.stock.domain.errors.ErrorType
 import com.fiap.stock.domain.errors.SelfOrderManagementException
 import com.fiap.stock.domain.valueobjects.ProductCategory
 import com.fiap.stock.usecases.*
+import org.slf4j.LoggerFactory
 
 class ProductService(
     private val productRepository: ProductGateway,
@@ -15,6 +16,8 @@ class ProductService(
         SearchProductUseCase,
         AssembleProductsUseCase,
         RemoveProductUseCase {
+    private val log = LoggerFactory.getLogger(javaClass)
+    
     override fun getByProductNumber(productNumber: Long): Product {
         return productRepository.findByProductNumber(productNumber)
             ?: throw SelfOrderManagementException(
@@ -39,28 +42,34 @@ class ProductService(
         product: Product,
         components: List<Long>,
     ): Product {
-        val newProduct = product.copy(components = components.map(loadComponentUseCase::getByComponentNumber))
-        return productRepository.create(newProduct)
+        log.info("Creating product $product with components: $components")
+        return productRepository.create(
+            product.copy(components = components.map(loadComponentUseCase::getByComponentNumber))
+        )
     }
 
     override fun update(
         product: Product,
         components: List<Long>,
     ): Product {
-        val newProduct = product.copy(components = components.map(loadComponentUseCase::getByComponentNumber))
-        return productRepository.update(newProduct)
+        log.info("Updating product $product with components: $components")
+        return productRepository.update(
+            product.copy(components = components.map(loadComponentUseCase::getByComponentNumber))
+        )
     }
 
     override fun delete(productNumber: Long): Product {
+        log.info("Removing product [$productNumber]")
         return productRepository.delete(productNumber)
     }
 
     override fun compose(
         productNumber: Long,
-        subItemsNumbers: List<Long>,
+        subitemsNumbers: List<Long>,
     ): Product {
+        log.info("Composing product [$productNumber] with sub items numbers: $subitemsNumbers")
         val product = getByProductNumber(productNumber)
-        val subItems = subItemsNumbers.map(::getByProductNumber)
+        val subItems = subitemsNumbers.map(::getByProductNumber)
         val newProduct = product.copy(subItems = subItems)
         return productRepository.update(newProduct)
     }
