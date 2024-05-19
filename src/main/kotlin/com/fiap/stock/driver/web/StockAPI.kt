@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 
-@Tag(name = "estoque", description = "API de estoque de componentes")
+@Tag(name = "estoque", description = "Estoque de componentes")
 @RequestMapping("/admin/stock")
 interface StockAPI {
     @Operation(

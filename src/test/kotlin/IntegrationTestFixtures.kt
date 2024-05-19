@@ -2,9 +2,6 @@ import com.fiap.stock.domain.valueobjects.ProductCategory
 import com.fiap.stock.driver.web.request.ComponentRequest
 import com.fiap.stock.driver.web.request.ProductRequest
 import java.math.BigDecimal
-import java.util.*
-
-
 
 fun createProductRequest(
     name: String = "Big Mac",

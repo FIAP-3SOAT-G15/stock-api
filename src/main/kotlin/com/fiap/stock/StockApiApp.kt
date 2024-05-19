@@ -11,16 +11,13 @@ import org.springframework.boot.runApplication
 @OpenAPIDefinition(
     info =
         Info(
-            title = "Self-Order Management API",
+            title = "Stock API",
             version = "1.0.0",
-            description =
-                "API de autoatendimento em restaurante como implementação do Tech Challenge" +
-                    " referente à primeira fase do curso de pós-graduação em Arquitetura de Software pela FIAP.",
-            contact =
-                Contact(
-                    name = "Grupo 15",
-                    url = "http://fiap-3soat-g15.s3-website-us-east-1.amazonaws.com",
-                ),
+            description = "Microsserviço de estoque",
+            contact = Contact(
+                name = "Grupo 15",
+                url = "http://fiap-3soat-g15.s3-website-us-east-1.amazonaws.com",
+            ),
         ),
     servers = [
         Server(url = "/"),
