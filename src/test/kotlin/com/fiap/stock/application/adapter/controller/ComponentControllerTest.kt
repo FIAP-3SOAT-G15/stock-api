@@ -30,7 +30,9 @@ class ComponentControllerTest {
         @Test
         fun `findAll should return of all components`() {
             val component1 = createComponent(componentNumber = 1)
-            val component2 = createComponent(componentNumber = 2)
+            val component2 = createComponent(componentNumber = 2).update(
+                component1
+            )
 
             every { loadComponentUseCase.findAll() } returns listOf(component1, component2)
 

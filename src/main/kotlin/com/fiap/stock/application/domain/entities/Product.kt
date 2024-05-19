@@ -26,5 +26,4 @@ data class Product(
             components = newProduct.components,
         )
 
-    fun isLogicalItem() = components.isEmpty()
 }

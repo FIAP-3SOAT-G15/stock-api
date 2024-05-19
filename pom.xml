@@ -373,6 +373,8 @@
                 <configuration>
                     <excludes>
                         <exclude>**/*Config.*</exclude>
+                        <exclude>**/config/*</exclude>
+                        <exclude>**/configuration/*</exclude>
                         <exclude>**/*Mapper.*</exclude>
                     </excludes>
                 </configuration>
