@@ -10,6 +10,7 @@ import com.fiap.stock.domain.errors.SelfOrderManagementException
 import com.fiap.stock.usecases.CreateComponentUseCase
 import com.fiap.stock.usecases.LoadComponentUseCase
 import com.fiap.stock.usecases.SearchComponentUseCase
+import org.slf4j.LoggerFactory
 
 class ComponentService(
     private val componentRepository: ComponentGateway,
@@ -18,6 +19,8 @@ class ComponentService(
 ) : LoadComponentUseCase,
     SearchComponentUseCase,
     CreateComponentUseCase {
+    private val log = LoggerFactory.getLogger(javaClass)
+    
     override fun getByComponentNumber(componentNumber: Long): Component {
         return componentRepository.findByComponentNumber(componentNumber)
             ?: throw SelfOrderManagementException(
@@ -47,6 +50,7 @@ class ComponentService(
         component: Component,
         initialQuantity: Long,
     ): Component {
+        log.info("Creating component $component with initial quantity of $initialQuantity")
         val savedComponent = componentRepository.create(component)
         val stock = Stock(componentNumber = savedComponent.number!!, quantity = initialQuantity)
         stockRepository.create(stock)
