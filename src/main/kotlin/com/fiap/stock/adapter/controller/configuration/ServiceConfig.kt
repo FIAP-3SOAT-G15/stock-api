@@ -5,7 +5,7 @@ import com.fiap.stock.adapter.gateway.ComponentGateway
 import com.fiap.stock.adapter.gateway.ProductGateway
 import com.fiap.stock.adapter.gateway.StockGateway
 import com.fiap.stock.usecases.LoadComponentUseCase
-import com.fiap.stock.usecases.services.ComponentService
+import com.fiap.stock.application.services.ComponentService
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration

@@ -1,4 +1,4 @@
-package com.fiap.stock.usecases.services
+package com.fiap.stock.application.services
 
 import com.fiap.stock.adapter.gateway.ComponentGateway
 import com.fiap.stock.adapter.gateway.ProductGateway

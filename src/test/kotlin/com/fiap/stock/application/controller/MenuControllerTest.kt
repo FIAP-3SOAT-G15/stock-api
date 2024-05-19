@@ -1,5 +1,6 @@
-package com.fiap.stock.adapter.controller
+package com.fiap.stock.application.controller
 
+import com.fiap.stock.adapter.controller.MenuController
 import com.fiap.stock.domain.valueobjects.ProductCategory
 import com.fiap.stock.usecases.LoadProductUseCase
 import com.fiap.stock.usecases.SearchProductUseCase
