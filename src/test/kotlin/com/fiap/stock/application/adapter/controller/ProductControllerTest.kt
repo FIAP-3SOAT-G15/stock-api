@@ -1,11 +1,12 @@
 package com.fiap.stock.application.adapter.controller
 
 import com.fiap.stock.application.domain.valueobjects.ProductCategory
-import com.fiap.stock.application.driver.web.request.ProductRequest
+import com.fiap.stock.application.driver.web.request.ProductComposeRequest
 import com.fiap.stock.application.driver.web.response.ProductResponse
 import com.fiap.stock.application.usecases.AssembleProductsUseCase
 import com.fiap.stock.application.usecases.LoadProductUseCase
 import com.fiap.stock.application.usecases.SearchProductUseCase
+import createProduct
 import createProductRequest
 import io.mockk.every
 import io.mockk.mockk
@@ -58,6 +59,40 @@ class ProductControllerTest {
             every { assembleProductsUseCase.update(product.copy(number = 1), request.components) } returns product.copy(number = 1)
 
             val response = controller.update(1, request)
+
+            assertThat(response.statusCode.value())
+                .isEqualTo(200)
+
+        }
+
+        @Test
+        fun `delete should return product deleted`() {
+            val request = createProductRequest()
+            val product = request.toDomain()
+
+            every { assembleProductsUseCase.delete(1) } returns product.copy(number = 1)
+
+            val response = controller.delete(1)
+
+            assertThat(response.statusCode.value())
+                .isEqualTo(200)
+        }
+
+        @Test
+        fun `compose should return product composed`() {
+            val request = ProductComposeRequest(1, arrayListOf(2,3))
+            val p2 = createProduct(number = 2)
+            val p3 = createProduct(number = 3)
+
+            val p1 = createProduct(subitems = arrayListOf(p2, p3))
+
+
+            every { assembleProductsUseCase.compose(
+                request.productNumber,
+                request.subItemsNumbers,
+            ) } returns p1
+
+            val response = controller.compose(request)
 
             assertThat(response.statusCode.value())
                 .isEqualTo(200)
