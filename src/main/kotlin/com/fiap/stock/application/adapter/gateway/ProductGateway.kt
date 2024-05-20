@@ -5,6 +5,8 @@ import com.fiap.stock.application.domain.valueobjects.ProductCategory
 
 interface ProductGateway {
     fun findAll(): List<Product>
+    
+    fun findAllByProductNumber(productNumbers: List<Long>): List<Product>
 
     fun findByProductNumber(productNumber: Long): Product?
 

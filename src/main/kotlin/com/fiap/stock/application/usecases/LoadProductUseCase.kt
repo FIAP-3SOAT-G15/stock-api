@@ -8,5 +8,7 @@ interface LoadProductUseCase {
 
     fun findAll(): List<Product>
 
+    fun findAllByProductNumber(productNumbers: List<Long>): List<Product>
+
     fun findByCategory(category: ProductCategory): List<Product>
 }

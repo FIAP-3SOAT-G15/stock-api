@@ -5,7 +5,11 @@ import com.fiap.stock.application.domain.entities.Product
 import com.fiap.stock.application.domain.errors.ErrorType
 import com.fiap.stock.application.domain.errors.SelfOrderManagementException
 import com.fiap.stock.application.domain.valueobjects.ProductCategory
-import com.fiap.stock.application.usecases.*
+import com.fiap.stock.application.usecases.AssembleProductsUseCase
+import com.fiap.stock.application.usecases.LoadComponentUseCase
+import com.fiap.stock.application.usecases.LoadProductUseCase
+import com.fiap.stock.application.usecases.RemoveProductUseCase
+import com.fiap.stock.application.usecases.SearchProductUseCase
 import org.slf4j.LoggerFactory
 
 class ProductService(
@@ -18,25 +22,24 @@ class ProductService(
         RemoveProductUseCase {
     private val log = LoggerFactory.getLogger(javaClass)
     
-    override fun getByProductNumber(productNumber: Long): Product {
-        return productRepository.findByProductNumber(productNumber)
+    override fun getByProductNumber(productNumber: Long): Product =
+        productRepository.findByProductNumber(productNumber)
             ?: throw SelfOrderManagementException(
                 errorType = ErrorType.PRODUCT_NOT_FOUND,
                 message = "Product [$productNumber] not found",
             )
-    }
 
-    override fun findAll(): List<Product> {
-        return productRepository.findAll()
-    }
+    override fun findAll(): List<Product> =
+        productRepository.findAll()
 
-    override fun findByCategory(category: ProductCategory): List<Product> {
-        return productRepository.findByCategory(category)
-    }
+    override fun findAllByProductNumber(productNumbers: List<Long>): List<Product> =
+        productRepository.findAllByProductNumber(productNumbers)
 
-    override fun searchByName(productName: String): List<Product> {
-        return productRepository.searchByName(productName.trim())
-    }
+    override fun findByCategory(category: ProductCategory): List<Product> =
+        productRepository.findByCategory(category)
+
+    override fun searchByName(productName: String): List<Product> =
+        productRepository.searchByName(productName.trim())
 
     override fun create(
         product: Product,

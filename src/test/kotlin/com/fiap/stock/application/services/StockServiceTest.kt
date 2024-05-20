@@ -1,8 +1,10 @@
 package com.fiap.stock.application.services
 
 import com.fiap.stock.application.adapter.gateway.StockGateway
+import com.fiap.stock.application.adapter.gateway.TransactionalGateway
 import com.fiap.stock.application.domain.errors.ErrorType
 import com.fiap.stock.application.domain.errors.SelfOrderManagementException
+import com.fiap.stock.application.usecases.LoadProductUseCase
 import createStock
 import io.mockk.every
 import io.mockk.mockk
@@ -15,10 +17,14 @@ import org.junit.jupiter.api.Test
 
 class StockServiceTest {
     private val stockRepository = mockk<StockGateway>()
+    private val loadProductUseCase = mockk<LoadProductUseCase>()
+    private val transactionalGateway = mockk<TransactionalGateway>()
 
     private val stockService =
         StockService(
             stockRepository,
+            loadProductUseCase,
+            transactionalGateway,
         )
 
     @AfterEach

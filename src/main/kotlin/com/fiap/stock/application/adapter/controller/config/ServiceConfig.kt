@@ -4,6 +4,7 @@ import com.fiap.stock.application.StockApiApp
 import com.fiap.stock.application.adapter.gateway.ComponentGateway
 import com.fiap.stock.application.adapter.gateway.ProductGateway
 import com.fiap.stock.application.adapter.gateway.StockGateway
+import com.fiap.stock.application.adapter.gateway.TransactionalGateway
 import com.fiap.stock.application.usecases.LoadComponentUseCase
 import com.fiap.stock.application.services.ComponentService
 import org.springframework.context.annotation.Bean
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import com.fiap.stock.application.services.ProductService
 import com.fiap.stock.application.services.StockService
+import com.fiap.stock.application.usecases.LoadProductUseCase
 
 @Configuration
 @ComponentScan(basePackageClasses = [StockApiApp::class])
@@ -42,9 +44,15 @@ class ServiceConfig {
     }
 
     @Bean
-    fun createStockService(stockRepository: StockGateway): StockService {
-        return StockService(stockRepository)
+    fun createStockService(
+        stockRepository: StockGateway,
+        loadProductUseCase: LoadProductUseCase,
+        transactionalGateway: TransactionalGateway,
+    ): StockService {
+        return StockService(
+            stockRepository,
+            loadProductUseCase,
+            transactionalGateway,
+        )
     }
-
-
 }

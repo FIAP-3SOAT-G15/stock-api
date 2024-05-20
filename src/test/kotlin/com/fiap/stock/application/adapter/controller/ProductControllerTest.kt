@@ -3,6 +3,7 @@ package com.fiap.stock.application.adapter.controller
 import com.fiap.stock.application.domain.valueobjects.ProductCategory
 import com.fiap.stock.application.driver.web.request.ProductComposeRequest
 import com.fiap.stock.application.driver.web.response.ProductResponse
+import com.fiap.stock.application.usecases.AdjustStockUseCase
 import com.fiap.stock.application.usecases.AssembleProductsUseCase
 import com.fiap.stock.application.usecases.LoadProductUseCase
 import com.fiap.stock.application.usecases.SearchProductUseCase
@@ -16,17 +17,18 @@ import org.junit.jupiter.api.Test
 
 class ProductControllerTest {
 
-    private val assembleProductsUseCase: AssembleProductsUseCase = mockk<AssembleProductsUseCase>()
-    private val loadProductUseCase: LoadProductUseCase = mockk<LoadProductUseCase>()
-    private val searchProductUseCase: SearchProductUseCase = mockk<SearchProductUseCase>()
+    private val assembleProductsUseCase = mockk<AssembleProductsUseCase>()
+    private val loadProductUseCase = mockk<LoadProductUseCase>()
+    private val searchProductUseCase = mockk<SearchProductUseCase>()
+    private val adjustStockUseCase = mockk<AdjustStockUseCase>()
 
     private val controller =
         ProductController(
             assembleProductsUseCase = assembleProductsUseCase,
             loadProductUseCase = loadProductUseCase,
-            searchProductUseCase = searchProductUseCase
+            searchProductUseCase = searchProductUseCase,
+            adjustStockUseCase = adjustStockUseCase,
         )
-
 
     @Nested
     inner class CrudProduct {
@@ -96,9 +98,7 @@ class ProductControllerTest {
 
             assertThat(response.statusCode.value())
                 .isEqualTo(200)
-
         }
-
     }
 
     @Nested
@@ -106,7 +106,6 @@ class ProductControllerTest {
 
         @Test
         fun `getByProductNumber should return product by number`() {
-
             val product = createProductRequest().toDomain()
 
             every { loadProductUseCase.getByProductNumber(1) } returns product.copy(number = 1)
@@ -120,7 +119,6 @@ class ProductControllerTest {
 
         @Test
         fun `findAll should return all products`() {
-
             val product = createProductRequest().toDomain()
 
             every { loadProductUseCase.findAll() } returns arrayListOf(product.copy(number = 1))
@@ -137,7 +135,6 @@ class ProductControllerTest {
 
         @Test
         fun `findByCategory should return all from a category`() {
-
             val product = createProductRequest().toDomain()
 
             every { loadProductUseCase.findByCategory(ProductCategory.DRINK) } returns arrayListOf(product.copy(number = 1))
@@ -166,7 +163,4 @@ class ProductControllerTest {
                 .isNotNull()
         }
     }
-
-
-
 }

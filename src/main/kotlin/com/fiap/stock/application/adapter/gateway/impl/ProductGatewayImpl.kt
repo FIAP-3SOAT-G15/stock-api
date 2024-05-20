@@ -14,30 +14,23 @@ class ProductGatewayImpl(
 ) : ProductGateway {
     private val mapper: ProductMapper = Mappers.getMapper(ProductMapper::class.java)
 
-    override fun findAll(): List<Product> {
-        return productJpaRepository.findAll()
-            .map(mapper::toDomain)
-    }
+    override fun findAll(): List<Product> =
+        productJpaRepository.findAll().map(mapper::toDomain)
 
-    override fun findByProductNumber(productNumber: Long): Product? {
-        return productJpaRepository.findById(productNumber)
-            .map { mapper.toDomain(it) }
-            .orElse(null)
-    }
+    override fun findAllByProductNumber(productNumbers: List<Long>): List<Product> =
+        productJpaRepository.findAllById(productNumbers).map(mapper::toDomain)
 
-    override fun findByCategory(category: ProductCategory): List<Product> {
-        return productJpaRepository.findByCategoryIgnoreCase(category.toString())
-            .map { mapper.toDomain(it) }
-    }
+    override fun findByProductNumber(productNumber: Long): Product? =
+        productJpaRepository.findById(productNumber).map { mapper.toDomain(it) }.orElse(null)
 
-    override fun searchByName(name: String): List<Product> {
-        return productJpaRepository.findByNameContainingIgnoreCase(name)
-            .map(mapper::toDomain)
-    }
+    override fun findByCategory(category: ProductCategory): List<Product> =
+        productJpaRepository.findByCategoryIgnoreCase(category.toString()).map { mapper.toDomain(it) }
 
-    override fun create(product: Product): Product {
-        return persist(product.copy(number = null))
-    }
+    override fun searchByName(name: String): List<Product> =
+        productJpaRepository.findByNameContainingIgnoreCase(name).map(mapper::toDomain)
+
+    override fun create(product: Product): Product =
+        persist(product.copy(number = null))
 
     override fun update(product: Product): Product {
         val number =
