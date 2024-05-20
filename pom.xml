@@ -372,10 +372,12 @@
                 <version>0.8.12</version>
                 <configuration>
                     <excludes>
-                        <exclude>**/**/*Config.*</exclude>
-                        <exclude>**/**/config/*</exclude>
-                        <exclude>**/**/configuration/*</exclude>
-                        <exclude>**/*Mapper.*</exclude>
+                        <exclude>>**/com/fiap/stock/application/driver/database/configuration/GatewayConfig.kt</exclude>
+                        <exclude>>**/com/fiap/stock/application/config/JWTSecurityConfig.kt</exclude>
+                        <exclude>>**/com/fiap/stock/application/config/RestTemplateConfig.kt</exclude>
+                        <exclude>>**/com/fiap/stock/application/adapter/controller/configuration/ServiceConfig.kt</exclude>
+                        <exclude>**/com/fiap/stock/application/**/configuration/**</exclude>
+
                     </excludes>
                 </configuration>
                 <executions>
