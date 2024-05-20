@@ -108,7 +108,7 @@ interface ProductAPI {
     ): ResponseEntity<List<ProductResponse>>
 
     @Operation(
-        summary = "Cadastra produto",
+        summary = "Cadastra um novo produto",
         parameters = [
             Parameter(
                 name = "x-admin-token",
@@ -122,6 +122,7 @@ interface ProductAPI {
         value = [
             ApiResponse(responseCode = "200", description = "Operação bem-sucedida"),
             ApiResponse(responseCode = "422", description = "Produto inválido"),
+            ApiResponse(responseCode = "500", description = "Erro não esperado"),
         ],
     )
     @PostMapping()
