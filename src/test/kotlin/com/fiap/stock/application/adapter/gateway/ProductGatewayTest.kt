@@ -4,7 +4,6 @@ import com.fiap.stock.application.adapter.gateway.impl.ProductGatewayImpl
 import com.fiap.stock.application.domain.errors.SelfOrderManagementException
 import com.fiap.stock.application.domain.valueobjects.ProductCategory
 import com.fiap.stock.application.driver.database.persistence.jpa.ProductJpaRepository
-import com.fiap.stock.application.driver.database.persistence.mapper.ComponentMapper
 import com.fiap.stock.application.driver.database.persistence.mapper.ProductMapper
 import createProduct
 import io.mockk.every
