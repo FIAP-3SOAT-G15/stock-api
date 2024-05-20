@@ -65,6 +65,7 @@ interface ProductAPI {
     ): ResponseEntity<List<ProductResponse>>
 
     @Operation(
+        description = "Api de produtos, Retorna produto pelo número",
         summary = "Retorna produto pelo número",
         parameters = [
             Parameter(
