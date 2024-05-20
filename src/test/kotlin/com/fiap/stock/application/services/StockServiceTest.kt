@@ -1,8 +1,8 @@
 package com.fiap.stock.application.services
 
-import com.fiap.stock.adapter.gateway.StockGateway
-import com.fiap.stock.domain.errors.ErrorType
-import com.fiap.stock.domain.errors.SelfOrderManagementException
+import com.fiap.stock.application.adapter.gateway.StockGateway
+import com.fiap.stock.application.domain.errors.ErrorType
+import com.fiap.stock.application.domain.errors.SelfOrderManagementException
 import createStock
 import io.mockk.every
 import io.mockk.mockk
@@ -12,7 +12,6 @@ import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
-import services.StockService
 
 class StockServiceTest {
     private val stockRepository = mockk<StockGateway>()

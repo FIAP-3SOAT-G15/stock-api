@@ -1,6 +1,6 @@
-import com.fiap.stock.domain.valueobjects.ProductCategory
-import com.fiap.stock.driver.web.request.ComponentRequest
-import com.fiap.stock.driver.web.request.ProductRequest
+import com.fiap.stock.application.domain.valueobjects.ProductCategory
+import com.fiap.stock.application.driver.web.request.ComponentRequest
+import com.fiap.stock.application.driver.web.request.ProductRequest
 import java.math.BigDecimal
 
 fun createProductRequest(
