@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 @Tag(name = "produto", description = "Produtos")
 @RequestMapping("/admin/products")
+@SuppressWarnings
 interface ProductAPI {
     @Operation(
         summary = "Retorna todos os produtos",

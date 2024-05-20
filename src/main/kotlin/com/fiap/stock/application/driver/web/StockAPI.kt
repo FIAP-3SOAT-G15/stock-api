@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 @Tag(name = "estoque", description = "Estoque de componentes")
 @RequestMapping("/admin/stock")
+@SuppressWarnings
 interface StockAPI {
     @Operation(
         summary = "Acrescenta quantidade do componente em estoque",
