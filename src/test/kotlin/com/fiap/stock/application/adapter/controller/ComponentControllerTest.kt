@@ -64,7 +64,7 @@ class ComponentControllerTest {
         @Test
         fun `searchByName should return of all components with the name`() {
             val component = createComponent(componentNumber = 2)
-            val term = "lata"
+            val term = ComponentRequest("Hambúrguer", 10).name
 
             every { searchComponentUseCase.searchByName(term) } returns listOf(component)
 
