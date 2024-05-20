@@ -12,7 +12,7 @@ data class ProductResponse(
     @Schema(title = "Nome do produto", example = "Big Mac", required = true)
     val name: String,
     @Schema(
-        title = "Categoria",
+        title = "Categoria do produto",
         example = "MAIN",
         allowableValues = ["DRINK", "MAIN", "SIDE", "DESSERT"],
         required = true,
@@ -22,8 +22,8 @@ data class ProductResponse(
     @Schema(title = "Preço", example = "10.00", required = true)
     val price: BigDecimal,
     @Schema(
-        title = "Descrição",
-        example = "Dois hambúrgueres, alface, queijo, molho especial, cebola, picles, num pão com gergelim",
+        title = "Descrição do produto",
+        example = "Dois hambúrgueres, alface, queijo com picles num pão com gergelim",
         required = true,
     )
     val description: String,
@@ -33,7 +33,7 @@ data class ProductResponse(
     val maxSub: Int = Int.MAX_VALUE,
     @Schema(title = "Subitens", type = "array", minLength = 1, required = true)
     val subItems: List<Product>,
-    @Schema(title = "Componentes", type = "array", minLength = 1, required = true)
+    @Schema(title = "Componentes, ou elementos estocáveis", type = "array", minLength = 1, required = true)
     val components: List<Component>,
 ) {
     companion object {
