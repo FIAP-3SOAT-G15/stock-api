@@ -1,4 +1,4 @@
-package com.fiap.stock.application.driver.database.configuration
+package com.fiap.stock.application.driver.database.config
 
 import com.fiap.stock.application.StockApiApp
 import com.fiap.stock.application.adapter.gateway.ComponentGateway

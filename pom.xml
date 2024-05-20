@@ -34,7 +34,10 @@
             **/com/fiap/stock/application/driver/web/MenuAPI*,
             **/com/fiap/stock/application/driver/web/ProductAPI*
         </sonar.exclusions>
-
+        <sonar.coverage.exclusions>
+            **/com/fiap/stock/application/**/config/**/*,
+            **/com/fiap/stock/application/driver/web/*API*.*,
+        </sonar.coverage.exclusions>
     </properties>
     <dependencies>
         <dependency>
@@ -377,20 +380,6 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.12</version>
-                <configuration>
-                    <excludes>
-                        <exclude>**/com/fiap/stock/application/driver/database/configuration/GatewayConfig.kt</exclude>
-                        <exclude>**/com/fiap/stock/application/config/JWTSecurityConfig.kt</exclude>
-                        <exclude>**/com/fiap/stock/application/config/RestTemplateConfig.kt</exclude>
-                        <exclude>**/com/fiap/stock/application/adapter/controller/configuration/ServiceConfig.kt</exclude>
-                        <exclude>**/com/fiap/stock/application/**/configuration/**</exclude>
-                        <exclude>**/com/fiap/stock/application/driver/web/*API</exclude>
-                        <exclude>**/com/fiap/stock/application/driver/web/ComponentAPI*</exclude>
-                        <exclude>**/com/fiap/stock/application/driver/web/ProductAPI*</exclude>
-                        <exclude>**/com/fiap/stock/application/driver/web/MenuAPI*</exclude>
-                        <exclude>**/com/fiap/stock/application/driver/web/StockAPI.kt</exclude>
-                    </excludes>
-                </configuration>
                 <executions>
                     <execution>
                         <id>prepare-agent</id>
