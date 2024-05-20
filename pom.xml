@@ -377,6 +377,14 @@
                         <exclude>>**/com/fiap/stock/application/config/RestTemplateConfig.kt</exclude>
                         <exclude>>**/com/fiap/stock/application/adapter/controller/configuration/ServiceConfig.kt</exclude>
                         <exclude>**/com/fiap/stock/application/**/configuration/**</exclude>
+                        <exclude>>**/com/fiap/stock/application/driver/web/*API</exclude>
+                        <exclude>>**/com/fiap/stock/application/driver/web/ComponentAPI*</exclude>
+                        <exclude>>**/com/fiap/stock/application/driver/web/ProductAPI*</exclude>
+                        <exclude>>**/com/fiap/stock/application/driver/web/MenuAPI*</exclude>
+                        <exclude>>**/com/fiap/stock/application/driver/web/StockAPI*</exclude>
+
+
+
 
                     </excludes>
                 </configuration>
