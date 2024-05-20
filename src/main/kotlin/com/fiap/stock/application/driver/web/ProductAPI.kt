@@ -2,6 +2,7 @@ package com.fiap.stock.application.driver.web
 
 import com.fiap.stock.application.driver.web.request.ProductComposeRequest
 import com.fiap.stock.application.driver.web.request.ProductRequest
+import com.fiap.stock.application.driver.web.request.ProductStockBatchChangeRequest
 import com.fiap.stock.application.driver.web.response.ProductResponse
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.Parameter
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 
 @Tag(name = "produto", description = "Produtos")
 @RequestMapping("/admin/products")
@@ -43,6 +45,71 @@ interface ProductAPI {
     @GetMapping
     fun findAll(): ResponseEntity<List<ProductResponse>>
 
+    @Operation(
+        summary = "Retorna todos os produtos identificados por número",
+        parameters = [
+            Parameter(
+                name = "x-admin-token",
+                required = true,
+                `in` = ParameterIn.HEADER,
+                schema = Schema(type = "string", defaultValue = "token"),
+            ),
+        ],
+    )
+    @ApiResponses(
+        value = [
+            ApiResponse(responseCode = "200", description = "Operação bem-sucedida"),
+        ],
+    )
+    @GetMapping("/batch")
+    fun findAllByProductNumber(
+        @Parameter(description = "IDs de produtos") @RequestParam("numbers") productNumbers: List<Long>,
+    ): ResponseEntity<List<ProductResponse>>
+    
+    @Operation(
+        summary = "Incrementa estoque disponível para os produtos identificados",
+        parameters = [
+            Parameter(
+                name = "x-admin-token",
+                required = true,
+                `in` = ParameterIn.HEADER,
+                schema = Schema(type = "string", defaultValue = "token"),
+            ),
+        ],
+    )
+    @ApiResponses(
+        value = [
+            ApiResponse(responseCode = "200", description = "Operação bem-sucedida"),
+        ],
+    )
+    @PostMapping("/batch/increment")
+    fun incrementStockOfProducts(
+        @Parameter(description = "Relações de produto e quantidade a incrementar")
+        @RequestBody productStockBatchChangeRequest: ProductStockBatchChangeRequest,
+    ): ResponseEntity<String>
+
+    @Operation(
+        summary = "Decrementa estoque disponível para os produtos identificados",
+        parameters = [
+            Parameter(
+                name = "x-admin-token",
+                required = true,
+                `in` = ParameterIn.HEADER,
+                schema = Schema(type = "string", defaultValue = "token"),
+            ),
+        ],
+    )
+    @ApiResponses(
+        value = [
+            ApiResponse(responseCode = "200", description = "Operação bem-sucedida"),
+        ],
+    )
+    @PostMapping("/batch/decrement")
+    fun decrementStockOfProducts(
+        @Parameter(description = "Relações de produto e quantidade a decrementar")
+        @RequestBody productStockBatchChangeRequest: ProductStockBatchChangeRequest,
+    ): ResponseEntity<String>
+    
     @Operation(
         summary = "Retorna produtos por categoria",
         parameters = [
@@ -127,7 +194,7 @@ interface ProductAPI {
             ApiResponse(responseCode = "500", description = "Erro não esperado"),
         ],
     )
-    @PostMapping()
+    @PostMapping
     fun create(
         @Parameter(description = "Cadastro do produto") @RequestBody productRequest: ProductRequest,
     ): ResponseEntity<ProductResponse>
