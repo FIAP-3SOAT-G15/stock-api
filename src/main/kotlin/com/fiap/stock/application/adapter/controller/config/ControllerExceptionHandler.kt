@@ -1,4 +1,4 @@
-package com.fiap.stock.application.adapter.controller.configuration
+package com.fiap.stock.application.adapter.controller.config
 
 import com.fiap.stock.application.domain.errors.ErrorType
 import com.fiap.stock.application.domain.errors.SelfOrderManagementException
