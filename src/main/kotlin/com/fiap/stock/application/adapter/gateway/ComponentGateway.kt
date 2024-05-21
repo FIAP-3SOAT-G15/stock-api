@@ -14,6 +14,4 @@ interface ComponentGateway {
     fun update(component: Component): Component
 
     fun delete(component: Component): Component
-
-    fun deleteAll()
 }

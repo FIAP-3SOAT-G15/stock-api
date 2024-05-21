@@ -4,7 +4,7 @@ import com.fiap.stock.application.driver.web.request.ComponentRequest
 import com.fiap.stock.application.usecases.CreateComponentUseCase
 import com.fiap.stock.application.usecases.LoadComponentUseCase
 import com.fiap.stock.application.usecases.SearchComponentUseCase
-import createComponent
+import com.fiap.stock.application.createComponent
 import io.mockk.every
 import io.mockk.mockk
 import org.assertj.core.api.Assertions.assertThat

@@ -5,7 +5,7 @@ import com.fiap.stock.application.adapter.gateway.TransactionalGateway
 import com.fiap.stock.application.domain.errors.ErrorType
 import com.fiap.stock.application.domain.errors.SelfOrderManagementException
 import com.fiap.stock.application.usecases.LoadProductUseCase
-import createStock
+import com.fiap.stock.application.createStock
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.unmockkAll

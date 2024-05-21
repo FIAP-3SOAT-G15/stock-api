@@ -58,10 +58,6 @@ class ProductGatewayImpl(
             )
     }
 
-    override fun deleteAll() {
-        productJpaRepository.deleteAll()
-    }
-
     private fun persist(product: Product): Product =
         product
             .let(mapper::toEntity)

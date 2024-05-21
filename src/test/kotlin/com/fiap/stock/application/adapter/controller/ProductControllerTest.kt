@@ -7,8 +7,8 @@ import com.fiap.stock.application.usecases.AdjustStockUseCase
 import com.fiap.stock.application.usecases.AssembleProductsUseCase
 import com.fiap.stock.application.usecases.LoadProductUseCase
 import com.fiap.stock.application.usecases.SearchProductUseCase
-import createProduct
-import createProductRequest
+import com.fiap.stock.application.createProduct
+import com.fiap.stock.application.it.createProductRequest
 import io.mockk.every
 import io.mockk.mockk
 import org.assertj.core.api.Assertions.assertThat

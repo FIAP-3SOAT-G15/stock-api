@@ -5,7 +5,7 @@ import com.fiap.stock.application.domain.errors.SelfOrderManagementException
 import com.fiap.stock.application.domain.valueobjects.ProductCategory
 import com.fiap.stock.application.driver.database.persistence.jpa.ProductJpaRepository
 import com.fiap.stock.application.driver.database.persistence.mapper.ProductMapper
-import createProduct
+import com.fiap.stock.application.createProduct
 import io.mockk.every
 import io.mockk.mockk
 import org.assertj.core.api.Assertions.assertThat
@@ -118,15 +118,6 @@ class ProductGatewayTest {
 
             assertThat(response).isNotNull()
         }
-
-        @Test
-        fun `deleteAll should return nothing`() {
-
-            every { productJpaRepository.deleteAll() } returns Unit
-
-            gateway.deleteAll()
-        }
-
     }
 
     @Nested

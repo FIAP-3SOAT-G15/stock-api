@@ -1,12 +1,8 @@
-import org.junit.jupiter.api.Tag
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase
-import org.springframework.test.context.ActiveProfiles
-import org.springframework.test.context.ContextConfiguration
+package com.fiap.stock.application
 
-@Tag("IntegrationTest")
-@ActiveProfiles("test")
-@Target(AnnotationTarget.CLASS, AnnotationTarget.FILE)
-annotation class IntegrationTest
+import com.fiap.stock.application.it.PostgreSQLContainerInitializer
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase
+import org.springframework.test.context.ContextConfiguration
 
 @ContextConfiguration(initializers = [PostgreSQLContainerInitializer::class])
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)

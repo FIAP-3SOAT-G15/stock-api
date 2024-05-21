@@ -1,3 +1,5 @@
+package com.fiap.stock.application
+
 import com.fiap.stock.application.domain.entities.Component
 import com.fiap.stock.application.domain.entities.Product
 import com.fiap.stock.application.domain.entities.Stock

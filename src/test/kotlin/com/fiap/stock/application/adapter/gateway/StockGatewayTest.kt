@@ -4,7 +4,7 @@ import com.fiap.stock.application.adapter.gateway.impl.StockGatewayImpl
 import com.fiap.stock.application.domain.errors.SelfOrderManagementException
 import com.fiap.stock.application.driver.database.persistence.jpa.StockJpaRepository
 import com.fiap.stock.application.driver.database.persistence.mapper.StockMapper
-import createStock
+import com.fiap.stock.application.createStock
 import io.mockk.every
 import io.mockk.mockk
 import org.assertj.core.api.Assertions.assertThat
