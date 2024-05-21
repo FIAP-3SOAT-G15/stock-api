@@ -4,8 +4,8 @@ import com.fiap.stock.application.adapter.gateway.ProductGateway
 import com.fiap.stock.application.domain.errors.ErrorType
 import com.fiap.stock.application.domain.errors.SelfOrderManagementException
 import com.fiap.stock.application.usecases.LoadComponentUseCase
-import createComponent
-import createProduct
+import com.fiap.stock.application.createComponent
+import com.fiap.stock.application.createProduct
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.unmockkAll

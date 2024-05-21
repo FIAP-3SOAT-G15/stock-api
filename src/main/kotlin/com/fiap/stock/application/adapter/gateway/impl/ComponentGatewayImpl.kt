@@ -67,10 +67,6 @@ class ComponentGatewayImpl(
         return component
     }
 
-    override fun deleteAll() {
-        componentJpaRepository.deleteAll()
-    }
-
     private fun persist(component: Component): Component =
         component
             .let(mapper::toEntity)

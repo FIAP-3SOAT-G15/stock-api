@@ -3,7 +3,7 @@ package com.fiap.stock.application.adapter.controller
 import com.fiap.stock.application.domain.valueobjects.ProductCategory
 import com.fiap.stock.application.usecases.LoadProductUseCase
 import com.fiap.stock.application.usecases.SearchProductUseCase
-import createProduct
+import com.fiap.stock.application.createProduct
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.unmockkAll

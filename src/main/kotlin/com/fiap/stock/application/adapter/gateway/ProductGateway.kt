@@ -19,6 +19,4 @@ interface ProductGateway {
     fun update(product: Product): Product
 
     fun delete(productNumber: Long): Product
-
-    fun deleteAll()
 }

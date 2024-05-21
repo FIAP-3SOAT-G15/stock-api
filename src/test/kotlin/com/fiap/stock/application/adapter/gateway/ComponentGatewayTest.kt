@@ -4,7 +4,7 @@ import com.fiap.stock.application.adapter.gateway.impl.ComponentGatewayImpl
 import com.fiap.stock.application.domain.errors.SelfOrderManagementException
 import com.fiap.stock.application.driver.database.persistence.jpa.ComponentJpaRepository
 import com.fiap.stock.application.driver.database.persistence.mapper.ComponentMapper
-import createComponent
+import com.fiap.stock.application.createComponent
 import io.mockk.every
 import io.mockk.mockk
 import org.assertj.core.api.Assertions.assertThat
@@ -106,17 +106,6 @@ class ComponentGatewayTest {
 
             assertThat(result).isNotNull()
         }
-
-        @Test
-        fun `deleteAll should return nothing`() {
-
-            every { componentJpaRepository.deleteAll() } returns Unit
-
-            gateway.deleteAll()
-        }
-
-
-
     }
 
     @Nested
