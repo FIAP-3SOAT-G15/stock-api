@@ -1,4 +1,4 @@
-version: '3.7'
+name: stock-api
 
 services:
   stock_api:
@@ -8,16 +8,22 @@ services:
       context: .
       dockerfile: Dockerfile
     depends_on:
-      - stock_db
+      stock_db:
+        condition: service_healthy
     environment:
       DB_ENDPOINT: stock_db:5432
-      DB_NAME: selforder
+      DB_NAME: stock
       DB_USERNAME: selforder
       DB_PASSWORD: self@Order123!
       ADMIN_ACCESS_TOKEN: token
     ports:
       - "8081:8081"
     restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8081/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   stock_db:
     image: postgres:15.4
@@ -31,6 +37,11 @@ services:
     ports:
       - "5432:5432"
     restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   stock_db:
