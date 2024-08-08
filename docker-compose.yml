@@ -15,7 +15,6 @@ services:
       DB_NAME: stock
       DB_USERNAME: selforder
       DB_PASSWORD: self@Order123!
-      ADMIN_ACCESS_TOKEN: token
     ports:
       - "8081:8081"
     restart: always

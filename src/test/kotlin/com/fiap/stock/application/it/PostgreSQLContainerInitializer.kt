@@ -12,9 +12,9 @@ class PostgreSQLContainerInitializer :
     companion object {
         private val instance: PostgreSQLContainerInitializer =
             PostgreSQLContainerInitializer()
-                .withDatabaseName("stockdb")
-                .withUsername("stock")
-                .withPassword("stock")
+                .withDatabaseName("database")
+                .withUsername("database")
+                .withPassword("database")
                 .waitingFor(forListeningPort())
     }
 
