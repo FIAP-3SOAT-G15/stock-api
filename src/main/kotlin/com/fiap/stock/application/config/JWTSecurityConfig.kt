@@ -2,9 +2,9 @@ package com.fiap.stock.application.config
 
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType
 import io.swagger.v3.oas.annotations.security.SecurityScheme
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.http.HttpMethod
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.core.authority.SimpleGrantedAuthority
@@ -19,6 +19,7 @@ import org.springframework.security.web.SecurityFilterChain
     bearerFormat = "JWT",
     scheme = "bearer"
 )
+@ConditionalOnProperty(name = ["security.enable"], havingValue = "true", matchIfMissing = true)
 class JWTSecurityConfig {
     @Bean
     fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
